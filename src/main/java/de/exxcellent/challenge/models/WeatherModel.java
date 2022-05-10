@@ -10,12 +10,9 @@ package de.exxcellent.challenge.models;
  */
 public class WeatherModel implements IDifferenceCalculator {
 
-
-    private double temperatureSpread = 0;
-
     public double calculateDifference(double maxTemp, double minTemp) {
 
-        return temperatureSpread = maxTemp-minTemp;
+        return maxTemp-minTemp;
     }
 
 }

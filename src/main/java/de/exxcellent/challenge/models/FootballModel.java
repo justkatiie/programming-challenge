@@ -9,7 +9,6 @@ between ‘Goals’ and ‘Goals Allowed’.
  * */
 
 
-
 public class FootballModel implements IDifferenceCalculator{
     public double calculateDifference(double goals, double goalsAllowed) {
         return (goals+goalsAllowed)/2;
