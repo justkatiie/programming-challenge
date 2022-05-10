@@ -23,8 +23,6 @@ public class WeatherController {
         this.weatherView = weatherView;
     }
 
-    public WeatherController(){}
-
     public void start(String path){
 
         String line = "";
@@ -66,7 +64,4 @@ public class WeatherController {
         }
     }
 
-    public String getDay(){
-        return dayOfSmallestTempSpread;
-    }
 }
