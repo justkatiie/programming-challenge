@@ -7,9 +7,7 @@ import java.io.BufferedReader;
 import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.IOException;
-import java.util.ArrayList;
 import java.util.HashMap;
-import java.util.List;
 import java.util.Map;
 
 
@@ -23,7 +21,6 @@ public class FootballController {
 
     private FootballModel footballModel;
     private FootballView footballView;
-    //private String dayOfSmallestTempSpread;
 
     public FootballController(FootballModel footballModel, FootballView footballView) {
         this.footballModel = footballModel;
@@ -53,12 +50,12 @@ public class FootballController {
 
                     String[] footballValues = line.split(",");
 
-
                     //Absolute Difference between goals (5 -> 6th in the .csv file) and goals allowed
                     // (6 -> 7th in the .csv file)
                     double currentAbsoluteDifference = footballModel.calculateDifference
                             (Double.parseDouble(footballValues[5]), Double.parseDouble(footballValues[6]));
 
+                    //adding all teams with their absolute difference into a hashMap to find multiple best teams
                     allFootballTeams.put(footballValues[0], currentAbsoluteDifference);
 
                     if (currentAbsoluteDifference < smallestDifference) {
@@ -70,9 +67,9 @@ public class FootballController {
 
                 }
 
+                //checking for multiple best teams
                 for (Map.Entry<String, Double> entry: allFootballTeams.entrySet()) {
-                    double difference = entry.getValue();
-                    if(smallestDifference == difference){
+                    if(smallestDifference == entry.getValue()){
                         footballView.printFootballTeam(entry.getKey());
                     }
                 }
