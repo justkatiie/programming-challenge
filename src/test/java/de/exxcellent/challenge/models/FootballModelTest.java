@@ -4,13 +4,13 @@ import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
-public class WeatherModelTest {
+public class FootballModelTest {
     @Test
     public void calculateDifference() {
-        double maxTemp = 55;
-        double minTemp = 45;
+        double goals = 55;
+        double goalsAllowed = 45;
 
-        assertEquals(10, (maxTemp-minTemp));
+        assertEquals(50, (goals+goalsAllowed)/2);
 
     }
 }

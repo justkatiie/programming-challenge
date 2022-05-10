@@ -39,7 +39,7 @@ public class FootballController {
                  */
                 br = new BufferedReader(new FileReader(path));
                 HashMap<String, Double> allFootballTeams = new HashMap();
-                String bestTeamName = "";
+
                 String headerLine = br.readLine();//headerLine created to ignore first line in calculations
                 double smallestDifference = 1000; //random high value for first comparison
                 /**
@@ -61,6 +61,7 @@ public class FootballController {
                     if (currentAbsoluteDifference < smallestDifference) {
                         smallestDifference = currentAbsoluteDifference;
                     }
+
 
 //                    System.out.println("Team: "+ footballValues[0] + ", Goals: " + footballValues[5]
 //                            + ", Goals Allowed: " + footballValues[6] + ", Abs.Diff: " + currentAbsoluteDifference );
