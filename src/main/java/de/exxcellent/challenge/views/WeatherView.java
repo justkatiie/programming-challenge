@@ -4,13 +4,10 @@ public class WeatherView {
 
     private String weatherDay;
     private String footballTeam;
-    public WeatherView(String weatherDay, String footballTeam){
-        this.weatherDay = weatherDay;
-        this.footballTeam = footballTeam;
-    }
+
     public WeatherView(){}
 
-    public void print(){
+    public void print(String weatherDay){
         String dayWithSmallestTempSpread = weatherDay;     // Your day analysis function call …
         System.out.printf("Day with smallest temperature spread : %s%n", dayWithSmallestTempSpread);
 

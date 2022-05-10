@@ -56,7 +56,7 @@ public class WeatherController {
                         dayOfSmallestTempSpread = weatherValues[0];
                     }
                 }
-
+            weatherView.print(dayOfSmallestTempSpread);
             } catch (FileNotFoundException ex) {
                 ex.printStackTrace();
             } catch (IOException e) {
