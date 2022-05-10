@@ -1,7 +1,9 @@
 package de.exxcellent.challenge.controllers;
 
 import de.exxcellent.challenge.controllers.WeatherController;
+import de.exxcellent.challenge.models.FootballModel;
 import de.exxcellent.challenge.models.WeatherModel;
+import de.exxcellent.challenge.views.FootballView;
 import de.exxcellent.challenge.views.WeatherView;
 
 import java.io.*;
@@ -27,10 +29,17 @@ public final class App {
         String weatherPath = "src/main/resources/de/exxcellent/challenge/weather.csv";
         String footballPath = "src/main/resources/de/exxcellent/challenge/football.csv";
 
+        //Calling the Weather Challenge
         WeatherModel weatherModel = new WeatherModel();
         WeatherView weatherView = new WeatherView();
         WeatherController weatherController = new WeatherController(weatherModel,weatherView);
         weatherController.start(weatherPath);
+
+        //Calling the Football Challenge
+        FootballModel footballModel = new FootballModel();
+        FootballView footballView = new FootballView();
+        FootballController footballController = new FootballController(footballModel,footballView);
+        footballController.startFootball(footballPath);
 
     }
 }

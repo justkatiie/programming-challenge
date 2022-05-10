@@ -1,4 +1,4 @@
 package de.exxcellent.challenge.views;
 
-public class WeatherView {
+public class WeatherViewTest {
 }

@@ -45,16 +45,14 @@ public class WeatherController {
                 while ((line = br.readLine()) != null) {
                     String[] weatherValues = line.split(",");
 
-                    double currentTempSpread = weatherModel.calculateTempSpread(Double.parseDouble(weatherValues[1]),
+                    double currentTempSpread = weatherModel.calculateDifference(Double.parseDouble(weatherValues[1]),
                             Double.parseDouble(weatherValues[2]));
-//                    System.out.println(weatherValues[0]+ ", " + weatherValues[1]+ ", " + weatherValues[2]+ ", "
-//                            + currentTempSpread); //Testing output
                     if(currentTempSpread<smallestTempSpread){
                         smallestTempSpread = currentTempSpread;
                         dayOfSmallestTempSpread = weatherValues[0];
                     }
                 }
-            weatherView.print(dayOfSmallestTempSpread);
+            weatherView.printWeather(dayOfSmallestTempSpread);
             } catch (FileNotFoundException ex) {
                 ex.printStackTrace();
             } catch (IOException e) {
